@@ -78,12 +78,12 @@ This system allows users to visualize where different types of ticks have been f
 
 ##### Technology used 
 
-firestore - to save URL of uploaded images and the user who uploaded them, date, time, latitude and longitude.
-firestorage - to save uploaded image.
-firebase authentication - to login, signup and save users' password and email.
-Gemini - to enable users to get information about tick.
-Google Map Flutter - to visualize the type and location of ticks on a map from the stored information.
-Geocoding API - to convert address or place name to latitude and longitude.
+firestore - to save URL of uploaded images and the user who uploaded them, date, time, latitude and longitude.  
+firestorage - to save uploaded image.  
+firebase authentication - to login, signup and save users' password and email.  
+Gemini - to enable users to get information about tick.  
+Google Map Flutter - to visualize the type and location of ticks on a map from the stored information.  
+Geocoding API - to convert address or place name to latitude and longitude.  
 
 ##### How to run
 1. Install Android Studio
@@ -101,7 +101,7 @@ Geocoding API - to convert address or place name to latitude and longitude.
 
 ##### Technology used
 
-torch - to define and load model.
+torch - to define and load model.  
 
 ##### How to run
 1. Install VSCode
