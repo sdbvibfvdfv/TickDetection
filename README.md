@@ -86,16 +86,18 @@ Google Map Flutter - to visualize the type and location of ticks on a map from t
 Geocoding API - to convert address or place name to latitude and longitude.  
 
 ##### How to run
-1. Install Android Studio
+1. Install Android Studio.  
    Android Studio URL > https://developer.android.com/studio/install?hl=ja
 
-2. Install flutter
+2. Install flutter.  
    flutter URL > https://docs.flutter.dev/get-started/install
 
-3. Start emulator
+3. Start emulator. (Click on the area circled in blue.)  
+![Image](https://github.com/user-attachments/assets/84cd2f8f-9356-42eb-bbf6-c908dda4623f)
+![Image](https://github.com/user-attachments/assets/5364b245-c12b-496e-9c5d-c21458c26960)
 
-5. Run app
-
+5. Run app. (Click on the area circled in blue.)  
+![Image](https://github.com/user-attachments/assets/a3272358-6899-43d8-a6ba-33ef68619636)
 
 #### django_prediction_API
 
@@ -104,16 +106,16 @@ Geocoding API - to convert address or place name to latitude and longitude.
 torch - to define and load model.  
 
 ##### How to run
-1. Install VSCode
+1. Install VSCode.
    VScode URL > https://code.visualstudio.com/Download
 
-2. Move to django_prediction_API and install django, djangorestframework, pillow, torch and torchvision.
+2. Move to django_prediction_API and install django, djangorestframework, pillow, torch and torchvision. (Run the following code in the terminal.)  
    ```
    cd django_prediction_API
    pip install django djangorestframework pillow torch torchvision
    ```
 
-3. Run server.  
+3. Run server. (Run the following code in the terminal.)  
    ```
    python manage.py runserver
    ```
