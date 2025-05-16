@@ -51,17 +51,20 @@ classification/
 ```
 
 ## 3. Application
-   3.1 flutter_project
-       You need to install Flutter.
-       https://docs.flutter.dev/get-started/install
 
-   3.2 django_prediction_API
-     pip install django djangorestframework pillow torch torchvision
+#### Overview
 
-   How to run the app
-   1. Execute the following comannd.
-      cd django_prediction_API
-      python manage.py runserver
-   2. Start simulator
-   3. Start flutter app.
+This is a tick prediction app that are used flutter and django API. Flutter_project is flutter mobile app. Django_prediction_API is API are made of django for prediction. User can login and uplaod tick's image and that place. Flutter app sends django API that image. Django app return prediction result to flutter app. Flutter app show that result by palce that user resgistered on Google Map.
+
+#### How to run flutter_project
+
+1. Install Android Studio
+   Android Studio URL > https://developer.android.com/studio/install?hl=ja
+
+2. Install flutter
+   flutter URL > https://docs.flutter.dev/get-started/install
+
+3. Start emulator
+
+4. Run app
 
