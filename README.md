@@ -54,10 +54,38 @@ classification/
 
 #### Overview
 
-This is a tick prediction app that are used flutter and django API. Flutter_project is flutter mobile app. Django_prediction_API is API are made of django for prediction. User can login and uplaod tick's image and that place. Flutter app sends django API that image. Django app return prediction result to flutter app. Flutter app show that result by palce that user resgistered on Google Map.
+Tick Prediction App
+This project consists of a Flutter mobile application and a Django-based prediction API.
 
-#### How to run flutter_project
+Flutter_project: The Flutter mobile app that users interact with.
 
+Django_prediction_API: A Django API that handles image-based tick prediction.
+
+Features
+Users can log in and upload an image of a tick along with the location where it was found.
+
+The Flutter app sends the image and to the Django API.
+
+The Django API processes the image and returns the predicted tick type.
+
+The Flutter app then displays the prediction result on a Google Map, pinned at the user-specified location.
+
+Users can ask Gemini from the Flutter app and also ask about that tick by tapping the pin on the map.
+
+This system allows users to visualize where different types of ticks have been found, helping in awareness and prevention efforts.
+
+#### flutter_project
+
+##### Technology used 
+
+firestore - to save URL of uploaded images and the user who uploaded them, date, time, latitude and longitude.
+firestorage - to save uploaded image.
+firebase authentication - to login, signup and save users' password and email.
+Gemini - to enable users to get information about tick.
+Google Map Flutter - to visualize the type and location of ticks on a map from the stored information.
+Geocoding API - to convert address or place name to latitude and longitude.
+
+##### How to run
 1. Install Android Studio
    Android Studio URL > https://developer.android.com/studio/install?hl=ja
 
@@ -66,5 +94,26 @@ This is a tick prediction app that are used flutter and django API. Flutter_proj
 
 3. Start emulator
 
-4. Run app
+5. Run app
 
+
+#### django_prediction_API
+
+##### Technology used
+
+torch - to define and load model.
+
+##### How to run
+1. Install VSCode
+   VScode URL > https://code.visualstudio.com/Download
+
+2. Move to django_prediction_API and install django, djangorestframework, pillow, torch and torchvision.
+   ```
+   cd django_prediction_API
+   pip install django djangorestframework pillow torch torchvision
+   ```
+
+3. Run server.  
+   ```
+   python manage.py runserver
+   ```
