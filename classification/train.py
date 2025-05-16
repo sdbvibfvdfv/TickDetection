@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader
 import os
 
 # === 設定 ===
-DATA_DIR = "/content/drive/MyDrive/Tick_detection/data"
+DATA_DIR = "/content/drive/MyDrive/classification/data"
 BATCH_SIZE = 32
 IMG_SIZE = 224
 NUM_CLASSES = len(os.listdir(os.path.join(DATA_DIR, "train")))
@@ -47,11 +47,11 @@ model = get_model()
 model, optimizer = train_model(model, train_loader)
 
 # === 学習済みモデルの保存 ===
-torch.save(model.state_dict(), "/content/drive/MyDrive/mobilenet_v2_weights.pth")
+torch.save(model.state_dict(), "/content/drive/MyDrive/classification/saved_model/model.pth")
 
 # === （必要に応じて学習状態も保存する場合）===
 torch.save({
     'model_state_dict': model.state_dict(),
     'optimizer_state_dict': optimizer.state_dict(),
     'epoch': 3
-}, "/content/drive/MyDrive/mobilenet_v2_checkpoint.pth")
+}, "/content/drive/MyDrive/classification/saved_model/model_checkpoint.pth")
