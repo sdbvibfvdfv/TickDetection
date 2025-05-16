@@ -1,6 +1,81 @@
-# Overview
+# Tick Detection Using Image Classification
 
-## 1. Data preprocess
+This AI/ML project classifies tick species from microscope images to support medical and environmental research. It also helps users identify dangerous areas where ticks are commonly found. Users and researchers can upload tick images for automatic species identification. Additionally, the project features geolocation of tick findings on a map and integrates with Gemini to enable users to ask questions related to ticks and their risks.
+
+## Project Overview
+
+Ticks are vectors of various diseases affecting humans and animals. Proper identification of tick species is crucial for diagnosis, treatment, and preventive measures. This project leverages deep learning techniques to automate tick classification from images taken under a microscope. The platform also maps tick occurrences and provides an interactive question-answering feature powered by Gemini to help users understand tick risks.
+
+## Features
+
+- Upload tick images for automatic species classification
+- Stratified train-validation split and aggressive image augmentation for balanced training
+- Oversampling of minority classes to improve classification accuracy
+- Geolocation mapping of tick findings to identify risk areas
+- Interactive Q&A about ticks using Gemini integration
+
+## Project Structure
+
+
+## 1. Tick Detection - Data Preparation and Augmentation
+The tick_data_preprocessing.ipynb notebook/script prepares and balances image data for training a machine learning model to classify 4 different types of ticks. It performs train/validation splitting, data augmentation, and oversampling of underrepresented classes.
+
+Original dataset structure:
+
+```
+data/
+└── data_ver2/
+├── class_1/
+│ ├── img1.jpg
+│ ├── ...
+├── class_2/
+├── class_3/
+└── ...
+```
+
+After running the script, your directory will look like:
+
+```
+data/
+└── data_ver2/
+├── split_data/
+│ ├── train/
+│ │ ├── class_1/
+│ │ ├── class_2/
+│ │ └── ...
+│ └── val/
+│ ├── class_1/
+│ ├── class_2/
+│ └── ...
+
+```
+
+## What This Script Does
+
+Train/Validation Split: Stratified 80/20 split preserving class balance.
+
+Aggressive Image Augmentation: Horizontal/vertical flips, random rotation (±25°), brightness & contrast adjustments.
+
+Oversampling: Balances minority classes by augmenting images in the training set.
+
+## Requirements
+
+- Python 3.x
+- `scikit-learn`
+- `Pillow`
+- `torchvision`
+
+## How To Run
+
+```
+python path/to/tick_data_preprocessing.py
+```
+
+## Sample Output
+
+Initial train class counts: {'class_1': 50, 'class_2': 45, 'class_3': 2}
+Balanced train class counts: {'class_1': 50, 'class_2': 50, 'class_3': 50}
+
 
 ## 2. Classification
 
@@ -38,11 +113,7 @@ classification/
         └── 4/  # Ixodes
 ```
 
-Each class folder should contain images belonging to the respective tick category.
-
 ###### Trained Model Output
-
-After training, the model will be saved as:
 
 ```
 classification/
@@ -61,31 +132,33 @@ Flutter_project: The Flutter mobile app that users interact with.
 
 Django_prediction_API: A Django API that handles image-based tick prediction.
 
-Features
-Users can log in and upload an image of a tick along with the location where it was found.
+Features:
 
-The Flutter app sends the image and to the Django API.
+* Users can log in and upload an image of a tick along with the location where it was found.
 
-The Django API processes the image and returns the predicted tick type.
+* The Flutter app sends the image and to the Django API.
 
-The Flutter app then displays the prediction result on a Google Map, pinned at the user-specified location.
+* The Django API processes the image and returns the predicted tick type.
 
-Users can ask Gemini from the Flutter app and also ask about that tick by tapping the pin on the map.
+* The Flutter app then displays the prediction result on a Google Map, pinned at the user-specified location.
 
-This system allows users to visualize where different types of ticks have been found, helping in awareness and prevention efforts.
+* Users can ask Gemini from the Flutter app and also ask about that tick by tapping the pin on the map.
 
-#### flutter_project
+* This system allows users to visualize where different types of ticks have been found, helping in awareness and prevention efforts.
 
-##### Technology used 
+#### Flutter_project
 
-firestore - to save URL of uploaded images and the user who uploaded them, date, time, latitude and longitude.  
-firestorage - to save uploaded image.  
-firebase authentication - to login, signup and save users' password and email.  
-Gemini - to enable users to get information about tick.  
-Google Map Flutter - to visualize the type and location of ticks on a map from the stored information.  
-Geocoding API - to convert address or place name to latitude and longitude.  
+##### Technology used:
+
+* firestore - to save URL of uploaded images and the user who uploaded them, date, time, latitude and longitude.  
+* firestorage - to save uploaded image.  
+* firebase authentication - to login, signup and save users' password and email.  
+* Gemini - to enable users to get information about tick.  
+* Google Map Flutter - to visualize the type and location of ticks on a map from the stored information.  
+* Geocoding API - to convert address or place name to latitude and longitude.  
 
 ##### How to run
+
 1. Install Android Studio.  
    Android Studio URL > https://developer.android.com/studio/install?hl=ja
 
@@ -103,7 +176,7 @@ Geocoding API - to convert address or place name to latitude and longitude.
 
 ##### Technology used
 
-torch - to define and load model.  
+PyTorch — model definition and inference
 
 ##### How to run
 1. Install VSCode.
@@ -119,3 +192,4 @@ torch - to define and load model.
    ```
    python manage.py runserver
    ```
+   
