@@ -17,7 +17,7 @@ class _AskGeminiPageState extends State<AskGeminiPage> {
   bool _isLoading = false;
 
   Future<String> getGeminiResponse(String userInput) async {
-    const apiKey = 'AIzaSyCvvyI8CnP9y2NOUP6Cg1RgcIFg_0MIKyM';
+    const apiKey = 'APIKEY';
     const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$apiKey';
 
     final response = await http.post(
